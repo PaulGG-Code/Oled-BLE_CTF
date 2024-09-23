@@ -7,13 +7,13 @@ First, you need an esp32 micro controller.  If you do not yet have one, I typica
 The easiest way to get this projects firmware flashed to an ESP32 is to flash the provided pre-compiled binaries. You will need to install [esptool](https://github.com/espressif/esptool)  Then  do the following:
 Clone the repository
 ```
-git clone https://github.com/hackgnar/ble_ctf
+git clone https://github.com/paulgg-code/oled-ble_ctf
 ```
 
 
 Chage directory into the repository
 ```
-cd ble_ctf
+cd oled-ble_ctf
 ```
 
 Flash the pre-compiled binaries
@@ -61,9 +61,33 @@ Setup your esp32 build environment by following [this documentation](http://esp-
 
 If you need a reminder, do the following once you set up your whole esp build environment from the link above.
 ````
-cd ble_ctf
+cd oled-ble_ctf
 idf.py set-target esp32  # set your serial device in bla -> bla -> bla
 idf.py menuconfig
 idf.py build
 idf.py flash
 ````
+
+## Adding the SS1306 OLED
+idf.py menuconfig 
+  --> ssd1306 --> make sure SDA is 21, SCL is 22 and RESET is -1
+  --> component config --> bluetooth enable
+
+````
+ESP32                OLED Display
++-------+           +---------+
+|       |           |         |
+|   21  +-----------> SDA     |
+|       |           |         |
+|   22  +-----------> SCL     |
+|       |           |         |
+|  GND  +-----------> GND     |
+|       |           |         |
+|  3.3v +-----------> VCC     |
++-------+           +---------+
+````
+
+- Connect PIN 21 of the ESP to SDA of the OLED
+- Connect PIN 22 of the ESP to SCL of the OLED
+- Connect GND of the ESP to GND of the OLED
+- Connect 3.3v of the ESP to the VCC of the OLED

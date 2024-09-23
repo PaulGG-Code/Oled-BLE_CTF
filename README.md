@@ -1,12 +1,11 @@
-[![Follow Hackgnar](static/twitter_hackgnar.png)](https://twitter.com/hackgnar)
-
 ## BLE Capture the Flag
 The purpose of BLE CTF is to teach the core concepts of Bluetooth Low Energy client and server interactions.  While it has also been built to be fun, it was built with the intent to teach and reinforce core concepts that are needed to plunge into the world of Bluetooth hacking.  After completing this CTF, you should have everything you need to start fiddling with any BLE GATT device you can find.
 
 ## Setting Up the CTF
 In order to set up the CTF you will need the following:
 1. The pre-compiled firmware or source code in this repository to build and flash an ESP32 with the CTF GATT server.  
-2. An esp32 microcontroller ([I sell overpriced pre-flashed ones here](https://www.ebay.com/itm/173370426012?ssPageName=STRK:MESELX:IT&_trksid=p3984.m1558.l2649))
+2. An esp32 microcontroller
+3. An SSD1306 OLED to display the score and progress
 3. A Linux box (OSX/Win + Linux VM works) with a bluetooth controller or a bluetooth usb dongle
 4. Bluetooth tools such as Bluez tools (hcitool, gatttool, etc) or [bleah](https://github.com/evilsocket/bleah)
 
