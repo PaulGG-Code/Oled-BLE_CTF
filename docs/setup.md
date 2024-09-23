@@ -69,22 +69,24 @@ idf.py flash
 ````
 
 ## Adding the SS1306 OLED
-idf.py menuconfig 
-  --> ssd1306 --> make sure SDA is 21, SCL is 22 and RESET is -1
-  --> component config --> bluetooth enable
+
+1. idf.py menuconfig 
+  - ssd1306 
+  - make sure SDA is `21`, SCL is `22` and RESET is `-1`
+  - then component config --> bluetooth enable
 
 ````
 ESP32                OLED Display
-+-------+           +---------+
-|       |           |         |
-|   21  +-----------> SDA     |
-|       |           |         |
-|   22  +-----------> SCL     |
-|       |           |         |
-|  GND  +-----------> GND     |
-|       |           |         |
-|  3.3v +-----------> VCC     |
-+-------+           +---------+
++---------+           +---------+
+|         |           |         |
+| PIN 21  +-----------> SDA     |
+|         |           |         |
+| PIN 22  +-----------> SCL     |
+|         |           |         |
+|   GND   +-----------> GND     |
+|         |           |         |
+|   3.3v  +-----------> VCC     |
++---------+           +---------+
 ````
 
 - Connect PIN 21 of the ESP to SDA of the OLED
